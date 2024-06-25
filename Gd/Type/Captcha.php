@@ -20,6 +20,7 @@ use Genemu\Bundle\FormBundle\Gd\Filter\Strip;
 use Genemu\Bundle\FormBundle\Gd\Filter\Background;
 use Genemu\Bundle\FormBundle\Gd\Filter\Border;
 use Genemu\Bundle\FormBundle\Gd\Filter\GrayScale;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * @author Olivier Chauvel <olivier@generation-multiple.com>
@@ -53,9 +54,9 @@ class Captcha extends Gd
      * @param Session $session
      * @param string  $secret
      */
-    public function __construct(Session $session, $secret)
+    public function __construct(RequestStack $requestStack, $secret)
     {
-        $this->session = $session;
+        $this->session = $requestStack->getSession();
         $this->secret = $secret;
         $this->key = 'genemu_form.captcha';
     }
