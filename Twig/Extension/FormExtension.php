@@ -12,29 +12,25 @@
 namespace Genemu\Bundle\FormBundle\Twig\Extension;
 
 use Symfony\Component\Form\FormView;
-use Symfony\Bridge\Twig\Form\TwigRendererInterface;
+use Symfony\Component\Form\FormRenderer;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * FormExtension extends Twig with form capabilities.
  *
  * @author Olivier Chauvel <olivier@generation-multiple.com>
  */
-class FormExtension extends \Twig_Extension
+class FormExtension extends AbstractExtension
 {
-    /**
-     * This property is public so that it can be accessed directly from compiled
-     * templates without having to call a getter, which slightly decreases performance.
-     *
-     * @var \Symfony\Component\Form\FormRendererInterface
-     */
     public $renderer;
 
     /**
      * Constructs.
      *
-     * @param TwigRendererInterface $renderer
+     * @param FormRenderer $renderer
      */
-    public function __construct(TwigRendererInterface $renderer)
+    public function __construct(FormRenderer $renderer)
     {
         $this->renderer = $renderer;
     }
@@ -45,8 +41,8 @@ class FormExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('form_javascript', array($this, 'renderJavascript'), array('is_safe' => array('html'))),
-            new \Twig_SimpleFunction('form_stylesheet', null, array(
+            new TwigFunction('form_javascript', array($this, 'renderJavascript'), array('is_safe' => array('html'))),
+            new TwigFunction('form_stylesheet', null, array(
                 'is_safe' => array('html'),
                 'node_class' => 'Symfony\Bridge\Twig\Node\SearchAndRenderBlockNode',
             )),
