@@ -1,33 +1,43 @@
 {
-    "name": "cosmow/code-mirror-bundle",
-    "description": "This Bundle integrates CodeMirror editor into a Symfony project.",
-    "keywords": ["codemirror", "php editor", "html editor", "editor"],
+    "name": "cosmow/genemu-form-bundle",
     "type": "symfony-bundle",
+    "description": "Extra form types for your Symfony projects",
+    "keywords": ["form", "extra form"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Aleksandr Moroz",
-            "homepage": "http://comingsoon.com",
-            "email": "netstroix@gmail.com"
+            "name": "Olivier Chauvel",
+            "email": "olivier@generation-multiple.com"
         },
         {
-            "name": "Aaron Mueller",
-            "homepage": "http://marbis.net/",
-            "email": "aaron.mueller@marbis.net"
+            "name": "Bilal Amarni",
+            "email": "bilal.amarni@gmail.com"
         },
         {
-            "name": "llupa"
+            "name": "Community contributions",
+            "homepage": "https://github.com/genemu/GenemuFormBundle/contributors"
         }
     ],
     "require": {
         "php": ">=7.4",
-        "twig/twig": "^3.8.0",
-        "laminas/laminas-json": "^3.6"
+        "symfony/framework-bundle": "^5.0",
+        "symfony/form": "^5.0",
+        "twig/twig": "~2.12|^3.0"
     },
-    "minimum-stability": "stable",
+    "suggest": {
+        "symfony/twig-bundle": "For integration into Twig templates",
+        "doctrine/doctrine-bundle": "In order to use some form types with Doctrine",
+        "symfony/finder": "For an image type",
+        "doctrine/mongodb-odm-bundle": "For MongoDB integration"
+    },
     "autoload": {
         "psr-4": {
-            "Solution\\CodeMirrorBundle\\": "src/"
+            "Genemu\\Bundle\\FormBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.0-dev"
         }
     }
 }
