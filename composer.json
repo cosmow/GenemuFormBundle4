@@ -20,9 +20,9 @@
     ],
     "require": {
         "php": ">=7.4",
-        "symfony/framework-bundle": "^5.0",
-        "symfony/form": "^5.0",
-        "twig/twig": "~2.12|^3.0"
+        "symfony/framework-bundle": "^6.0",
+        "symfony/form": "^6.0",
+        "twig/twig": "^3.0|^4.0"
     },
     "suggest": {
         "symfony/twig-bundle": "For integration into Twig templates",
@@ -37,7 +37,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "5.0-dev"
+            "dev-master": "6.0-dev"
         }
     }
 }
